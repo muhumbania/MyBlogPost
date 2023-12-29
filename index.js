@@ -30,22 +30,21 @@ app.get('/new-post', (req, res) => {
     res.render("create.ejs");
 });
 
+app.get('/show', (req, res) => {
+    res.render('show.ejs');
+});
+
+app.post('/create', (req, res) => {
+    postList.push(req.body);
+    res.redirect('/');
+    console.log(postList);
+});
+
 postList.forEach((post) => {
     app.get(`/show/${postList.indexOf(post)}`, (req, res) => {
         res.render('show.ejs', {post : post});
     });
 });
-
-app.get('/show', (req, res) => {
-    res.render('show.ejs');
-});
-
-
-app.post('/create', (req, res) => {
-    postList.push(req.body);
-    res.redirect('/');
-});
-
 
 app.listen(port, ()=>{
     console.log(`Server listening on port ${port}`);
