@@ -30,6 +30,10 @@ app.get('/new-post', (req, res) => {
     res.render("create.ejs");
 });
 
+app.get('/show', (req, res) => {
+    res.render('show.ejs');
+});
+
 app.post('/create', (req, res) => {
     postList.push(req.body);
     res.redirect('/');
