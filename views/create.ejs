@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
 <body>
-    <form action="/create" method="POST">
-        <label for="title">Post Title:</label>
-        <input type="text" id="title" name="title" required>
-
-        <!-- Textarea Input -->
-        <label for="body">Post body:</label>
-        <textarea id="body" name="body" rows="4" required></textarea>
-
-        <!-- Submit Button -->
-        <button type="submit">Create post</button>
-    </form>
+    <div class="flex flex-col items-center justify-center h-[100vh]">
+        <h1 class="text-lg">Create a new post</h1>
+        <form action="/create" method="POST" class="flex flex-col w-96 gap-2">
+            <label for="title" class="text-sm">Post Title:</label>
+            <input type="text" id="title" name="title" required class="outline outline-gray-200 rounded-md bg-gray-50 p-2">
+    
+            <!-- Textarea Input -->
+            <label for="body" class="text-sm">Post body:</label>
+            <textarea id="body" name="body" rows="4" required class="outline outline-gray-200 rounded-md bg-gray-50 p-2"></textarea>
+    
+            <!-- Submit Button -->
+            <button type="submit" class="bg-black text-white px-2 py-1 rounded-md text-sm cursor-pointer">Create post</button>
+        </form>
+    </div>
+    
 </body>
 </html>
