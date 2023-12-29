@@ -12,18 +12,21 @@
     </header>
 
 
-    <div class="flex  bg-gray-100 justify-center items-center gap-4 flex-wrap">
+    <div class="flex  bg-gray-100 justify-center items-center gap-4 flex-wrap mb-20">
 
         <% posts.forEach(post => { %>
-            <div class="flex flex-col w-72 h-96 bg-white rounded-lg cursor-pointer hover:scale-105 border-2 shadow-xl">
-                <img src="images/thumbnail.png" class="h-72 w-72 rounded-lg shadow-sm">
-                <div class="flex flex-col gap-0 p-1 rounded-lg">
-                    <h1 class="text-lg text-black"><%= post.title %></h1>
-                    <p class="text-sm text-gray-500 font-sans">
-                        <%= post.body.slice(0, 100) + "..."  %>
-                    </p>
+   
+            <a href =<%=`show/${posts.indexOf(post)}`%>>
+                <div class="flex flex-col w-72 h-96 bg-white rounded-lg cursor-pointer hover:scale-105 border-2 shadow-xl">
+                    <img src="images/thumbnail.png" class="h-72 w-72 rounded-lg shadow-sm">
+                    <div class="flex flex-col gap-0 p-1 rounded-lg">
+                        <h1 class="text-lg text-black"><%= post.title %></h1>
+                        <p class="text-sm text-gray-500 font-sans">
+                            <%= post.body.slice(0, 100) + "..."  %>
+                        </p>
+                    </div>
                 </div>
-            </div>
+            </a>
         <%}); %>
 
     </div>
@@ -32,9 +35,11 @@
             New
         </div>
     </a>
-    
-    <footer class="h-[10vh] bg-gray-800">
+
+    <footer class="h-[10vh] bg-gray-800 fixed bottom-0 left-0 right-0">
 
     </footer>
+
+    <script src="../index.js"></script>
 </body>
 </html>
