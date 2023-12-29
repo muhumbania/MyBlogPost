@@ -5,6 +5,7 @@ const app = express();
 const port = 3000;
 
 app.use(express.static('public'));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const postList = [{
     title: "This is the title 1",
@@ -23,6 +24,15 @@ const postList = [{
 
 app.get('/', (req, res) => {
     res.render("index.ejs", {posts : postList});
+});
+
+app.get('/new-post', (req, res) => {
+    res.render("create.ejs");
+});
+
+app.post('/create', (req, res) => {
+    postList.push(req.body);
+    res.redirect('/');
 });
 
 app.listen(port, ()=>{
