@@ -37,7 +37,6 @@ app.get('/show', (req, res) => {
 app.post('/create', (req, res) => {
     postList.push(req.body);
     res.redirect('/');
-    console.log(postList);
 });
 
 postList.forEach((post) => {
