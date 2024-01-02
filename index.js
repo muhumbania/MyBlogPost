@@ -21,13 +21,16 @@ const postList = [{
 }
 ];
 
-
-app.get('/', (req, res) => {
-    res.render("index.ejs", {posts : postList});
-});
-
 app.get('/new-post', (req, res) => {
     res.render("create.ejs");
+});
+
+app.get('/about', (req, res) => {
+    res.render("about.ejs");
+});
+
+app.get('/contact', (req, res) => {
+    res.render("contact.ejs");
 });
 
 app.get('/show', (req, res) => {
