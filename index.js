@@ -25,6 +25,10 @@ app.get('/new-post', (req, res) => {
     res.render("create.ejs");
 });
 
+app.get('/', (req, res) => {
+    res.render("index.ejs", {posts : postList});
+});
+
 app.get('/about', (req, res) => {
     res.render("about.ejs");
 });
